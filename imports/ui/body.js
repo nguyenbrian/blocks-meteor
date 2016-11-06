@@ -11,7 +11,7 @@ Template.body.events({
        loops = Math.floor(parseInt($("#texter").val())) / 10 + 1
        if ($("#go").html() == "Reset") {
            $("#texter").show()
-           $("#go").html("Blockify")
+           $("#go").html("CREATE")
            $(".square").remove()
            $("#upwards-arrow").show()
            $("#downwards-arrow").show()
@@ -58,7 +58,7 @@ Template.body.events({
                $("#upwards-arrow").hide()
                $("#downwards-arrow").hide()
                $("#texter").hide()
-               $("#go").html("Reset")
+               $("#go").html("RESET")
        }
                
        }
