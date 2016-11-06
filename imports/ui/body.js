@@ -4,6 +4,7 @@ import './body.html';
 
 var count = 0
 var timer 
+
 Template.body.events({
     'click .clock' (event) {
        var loops = Math.floor(parseInt($("#texter").val())) / 10 + 1
@@ -34,6 +35,12 @@ Template.body.events({
     }
 });
 
+
+        $("#upwards-arrow").on("tap", function() {
+          increment()
+        });
+        
+        
 function counter() {
     count = count - 1
     if (count < 0) {
@@ -42,6 +49,10 @@ function counter() {
     $("#" + JSON.stringify(count)).animate({
         height: 0
         }, 500, function() {
-        $("#" + JSON.stringify(count)).remove()
-    })
+            $("#" + JSON.stringify(count)).animate({
+                width: 0
+            }, 250, function() {
+                $("#" + JSON.stringify(count)).remove()
+            })})
+    
 }
