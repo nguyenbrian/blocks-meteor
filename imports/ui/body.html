@@ -1,0 +1,45 @@
+<head>
+  <title>blocks</title>
+</head>
+
+    <body> 
+    
+        <div class="thugin"> 
+            <h1 id="title"> blocks </h1>
+            <h2> visualize time</h2>
+
+            <button class="arrow" id="upwards-arrow" onclick="increment()">&uarr;</button>
+            <input id="texter" type="number" placeholder="minutes">
+            <button class="arrow" id="downwards-arrow" onclick="decrement()">&darr;</button>
+
+            <div id="asshole"> </div>
+            <button type="button" id="go" class="clock"> CREATE </button>
+        </div>
+        
+    <script>
+        var input = document.getElementById("texter");
+        
+        function increment() {
+            if (input.value < 100) {
+                    input.stepUp(10);
+            } else {
+                console.log("fuck off");
+            }
+        }
+        
+        function decrement() {
+            if (input.value > 0) {
+                input.stepDown(10);
+            } else {
+                console.log("love u");
+            }
+        }
+
+    </script>
+    
+</body>
+
+
+<template name="block">
+  <p> asshole </p>
+</template> 
