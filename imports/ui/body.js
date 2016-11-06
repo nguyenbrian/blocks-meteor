@@ -4,14 +4,17 @@ import './body.html';
 
 var count = 0
 var timer 
+var loops
 
 Template.body.events({
     'click .clock' (event) {
-       var loops = Math.floor(parseInt($("#texter").val())) / 10 + 1
+       loops = Math.floor(parseInt($("#texter").val())) / 10 + 1
        if ($("#go").html() == "Reset") {
            $("#texter").show()
            $("#go").html("Blockify")
            $(".square").remove()
+           $("#upwards-arrow").show()
+           $("#downwards-arrow").show()
        } 
       else if (isNaN(loops)) {
            alert("Please input a number!")
@@ -19,34 +22,31 @@ Template.body.events({
        
        else {
        for (var i = 1; i < loops; i++) {
-               $("#asshole").append("<div id='" + i + "' class='square'></div>");
-            // //   $("#" + i).css("animation-delay", JSON.stringify(i * 10) + "s")
-            //   $("#" + i).on('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend',  function() {
-            //       $("#" + i).remove() 
-            //     })
+           if (i == 1 ) {
+                $("#asshole").append("<div id='" + i + "' class='square'></div>");
+               $("#" + i).animate({
+                   backgroundColor: "black"
+               }, 5000, function() {
+                   $("#1").animate({
+        height: 0
+        }, 500, function() {
+            $("#1").animate({
+                width: 0
+            }, 250, function() {
+                $("#1").remove()
+            })})
+               })
+               $("#upwards-arrow").hide()
+               $("#downwards-arrow").hide()
                $("#texter").hide()
                $("#go").html("Reset")
-               
-               
-       }
-        count = loops 
-        timer = setInterval(counter, 10000)
-       }
-    }
-});
-
-
-        $("#upwards-arrow").on("tap", function() {
-          increment()
-        });
-        
-        
-function counter() {
-    count = count - 1
-    if (count < 0) {
-        clearInterval(timer)
-    }
-    $("#" + JSON.stringify(count)).animate({
+               }
+      else {
+               $("#asshole").append("<div id='" + i + "' class='square'></div>");
+               $("#" + i).delay(i * 5000).animate({
+                   backgroundColor: "black"
+               }, 5000, function() {
+                   $("#" + JSON.stringify(count)).animate({
         height: 0
         }, 500, function() {
             $("#" + JSON.stringify(count)).animate({
@@ -54,5 +54,31 @@ function counter() {
             }, 250, function() {
                 $("#" + JSON.stringify(count)).remove()
             })})
+               })
+               $("#upwards-arrow").hide()
+               $("#downwards-arrow").hide()
+               $("#texter").hide()
+               $("#go").html("Reset")
+       }
+               
+       }
+        count = loops 
+        timer = setInterval(counter, 5000)
+       }
+    }
+});
+
+
+$("#upwards-arrow").on("tap", function() {
+    alert("tapped!")
+});
+        
+        
+function counter() {
+    count = count - 1
+    console.log(count)
+    if (count < 0) {
+        clearInterval(timer)
+    }
     
 }
