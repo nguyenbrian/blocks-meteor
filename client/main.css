@@ -1,36 +1,48 @@
 body {
-    background-color:#33425B;
-    font-family: 'Open Sans';
+    background-color:#030D11;
+    font-family: 'Montserrat' !important;
     text-align:center;
 }
 
 h1 {
-    color:#fff;
-    font-size:75px;
-    font-weight:900;
-    margin-bottom: 5px;
+    color:#FEB904;
+    font-family: "Montserrat";
+    font-size:40px;
+    font-weight:100;
+    margin-top: 5vh;
+    margin-bottom: -5px;
+}
+
+h2 {
+    font-weight: 100;
+    font-family: "Montserrat";
+    color: #ababab;
+    font-size: 15px;
+    margin-bottom: 11vh;
 }
 
 h3 {
+    font-family: "Montserrat";
     color:#fff; 
     font-weight:700;
     font-size:45px;
 
 }
 
-.thugin {
-    margin-top:30vh;
+#texter {
+    margin-left: auto;
+    margin-right: auto;
+	padding: 0.8em;
+	font-size: 67px;
+	font-family: "Montserrat";
+	border: none;
+	background: none;
+	color: #FEB904;
+	text-align: center;
 }
 
-
-#texter {
-    display: block;
-    margin-left:auto;
-    margin-right:auto;
-	padding: 0.8em;
-	border: none;
-	background: #f0f0f0;
-	color: #000;
+#texter:focus {
+    outline: none;
 }
 
 #output {
@@ -39,28 +51,126 @@ h3 {
 }
 
 #go {
-    margin-top:10px;
-    border:0;
+    font-weight: 700;
+    font-size: 18px;
+    margin-top: 5vh;
+    border: 1px solid #FFF;
 }
 
+#go:hover {
+    background-color: #FFF;
+    color: #FEB904;
+}
+
+#go:focus {
+    outline: none;
+}
+
+.square {
+    border: 2px solid #262626;
+    margin: 15px;
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    background: #04ACFF;
+    overflow: hidden;
+    /*animation: fillIn 10s;*/
+}
+
+@keyframes fillIn {
+  from {
+    background-color: #04ACFF;
+  }
+  to {
+    background-color: black;
+  }
+}
+
+.square:hover {
+    background-color: #fcac45 ;
+    border: 2px solid;
+}
 
 button {
   color: #ffffff;
+  background-color: #030D11;
   display: block;
   margin-left:auto;
   margin-right:auto;
   font-size: 20px;
-  background: #3498db;
   padding: 10px 20px 10px 20px;
   text-decoration: none;
 }
 
 button:hover {
-  background: #3cb0fd;
-  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
-  text-decoration: none;
+  color: #3cb0fd;
+}
+
+.arrow {
+    border: none;
+}
+
+#upwards-arrow {
+    font-size: 75px;
+}
+
+#upwards-arrow:hover {
+    color: #35BAA4;
+}
+
+#upwards-arrow:focus {
+    outline: none;
+}
+
+#downwards-arrow {
+    font-size: 75px;
+    margin-bottom: 13vh;
+}
+
+#downwards-arrow:hover {
+    color: #DF4E5E;
+}
+
+#downwards-arrow:focus {
+    outline: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+@media only screen 
+ and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2) { 
+      
+      h1 {
+        font-size: 125px;
+      }
+      
+      h2 {
+          font-size: 40px;
+      }
+      
+      #upwards-arrow {
+        font-size: 175px;
+        text-align:center;
+      }
+
+      #downwards-arrow {
+        font-size: 175px;
+        text-align:center;
+      }      
+      
+      #go {
+          font-size: 75px;
+          padding-left: 50px;
+          padding-right: 50px;
+          padding-top: 20px;
+          padding-bottom: 20px;
+      }
+     
 }
